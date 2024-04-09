@@ -2,6 +2,7 @@ import React, {FunctionComponent} from "react";
 import {SlideType} from "../../types/slideType";
 import {Heading} from "../../components/Heading/Heading";
 import Text from "../../components/Text/Text";
+import Slide from "./Slide/Slide";
 
 interface Props {
     slide: SlideType
@@ -9,8 +10,7 @@ interface Props {
 
 export const SlideContent: FunctionComponent<Props> = ({slide}) => {
     return (
-            <div className="embla__slide">
-                <div className={"text-left "}>
+            <Slide>
                     <Heading>
                         {slide?.heading}
                     </Heading>
@@ -20,7 +20,6 @@ export const SlideContent: FunctionComponent<Props> = ({slide}) => {
                     <Text>
                         {slide?.description}
                     </Text>
-                </div>
-            </div>
+            </Slide>
     )
 }

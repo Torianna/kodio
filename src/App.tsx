@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import EmblaCarousel from "./features/Gallery/EmblaCarousel";
+import Gallery from "./features/Gallery";
 import {EmblaOptionsType} from "embla-carousel";
 import data from './data/slidesData.json'
 
@@ -20,7 +20,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 function App() {
   return (
     <div className="App bg-french-gray-200 h-lvh content-center">
-        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+        <Gallery slides={SLIDES} options={OPTIONS} />
     </div>
   );
 }

@@ -1,18 +1,20 @@
 import React from 'react'
-import {NextButton, PrevButton, usePrevNextButtons} from './EmblaCarouselArrowButtons'
+import {NextButton, PrevButton} from './EmblaCarouselArrowButtons'
 import {EmblaOptionsType} from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import data from '../../data/slidesData.json'
 import '../../embla.css'
 import {SlideContent} from "./SlideContent";
 import {SlidePicture} from "./SlidePicture";
+import ActionContainer from "./ActionContainer/ActionContainer";
+import {usePrevNextButtons} from "../../hooks/usePreviousNextButtons";
 
 type PropType = {
     slides: number[]
     options?: EmblaOptionsType
 }
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
+const Gallery: React.FC<PropType> = (props) => {
     const {slides, options} = props
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
     const [emblaRef2, emblaApi2] = useEmblaCarousel(options)
@@ -49,14 +51,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                         ))}
                     </div>
                 </div>
-                <div className="embla__controls">
-                    <div className="embla__buttons">
-                        <PrevButton onClick={onPrevious} disabled={prevBtnDisabled}/>
-                        <NextButton onClick={onNext} disabled={nextBtnDisabled}/>
-                    </div>
-                </div>
+                <ActionContainer>
+                    <PrevButton onClick={onPrevious} disabled={prevBtnDisabled}/>
+                    <NextButton onClick={onNext} disabled={nextBtnDisabled}/>
+                </ActionContainer>
             </div>
-            <div className="flex-1 embla__viewport embla-image w-auto" ref={emblaRef}>
+            <div className={`flex-1 embla__viewport embla-image w-auto ${emblaApi?.canScrollPrev() ? 'left' : ''} ${emblaApi?.canScrollNext() ? 'right' : ''}`} ref={emblaRef}>
                 <div className="embla__container ">
                     {slides.map((index) => (
                         <SlidePicture index={index} selected={index === emblaApi?.selectedScrollSnap()}/>
@@ -67,4 +67,4 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     )
 }
 
-export default EmblaCarousel
+export default Gallery
