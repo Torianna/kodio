@@ -24,10 +24,6 @@ module.exports = {
         '32px': '32px',
         '113px': '113px',
       },
-      padding: {
-        '216px': '216px',
-        '113px': '113px',
-      }
     },
   },
   plugins: [],

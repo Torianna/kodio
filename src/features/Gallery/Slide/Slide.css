@@ -1,13 +1,4 @@
 .embla__slide {
     flex: 0 0 var(--slide-size);
-    min-width: 0;
     padding-left: var(--slide-spacing);
-}
-
-.embla__slide__img > img{
-    border-radius: 1.8rem;
-    display: block;
-    height: var(--slide-height);
-    width: 100%;
-    object-fit: cover;
 }

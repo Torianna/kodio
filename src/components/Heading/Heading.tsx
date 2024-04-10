@@ -6,7 +6,7 @@ interface Props{
 }
 
 const heading = tv({
-    base: 'text-azure-500 font-medium text-base mb-20px',
+    base: 'text-azure-500 font-medium md:text-base text-sm mb-20px',
 });
 
 export const Heading: FunctionComponent<Props> = ({children}) => {

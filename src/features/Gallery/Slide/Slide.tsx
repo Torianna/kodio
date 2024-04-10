@@ -12,7 +12,7 @@ const container = tv({
 
 const Slide: FunctionComponent<Props> = ({children}) => {
     return (
-            <div className={`${container()} embla__slide`}>
+            <div className={`${container()} embla__slide min-w-0`}>
                 {children}
             </div>
     )

@@ -5,7 +5,7 @@ type PropType = PropsWithChildren<DetailedHTMLProps<ButtonHTMLAttributes<HTMLBut
     HTMLButtonElement>>
 
 const button = tv({
-    base: 'w-14 h-14 border-solid rounded-full border-2 flex justify-center items-center border-azure-400 bg-azure-400',
+    base: 'w-12 h-12 border-solid rounded-full border-2 flex justify-center items-center border-azure-400 bg-azure-400',
     variants: {
         disabled: {
             true: 'bg-transparent pointer-events-none text-azure-400'

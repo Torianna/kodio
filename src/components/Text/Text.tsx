@@ -6,10 +6,10 @@ type PropType = PropsWithChildren<DetailedHTMLProps<HTMLAttributes<HTMLParagraph
 }
 
 const text = tv({
-    base: 'text-french-gray-700 font-normal text-xl',
+    base: 'text-french-gray-700 font-normal md:text-xl text-base',
     variants: {
         variant: {
-            title: 'text-space-950 font-bold text-4xl mb-32px'
+            title: 'text-space-950 font-bold md:text-4xl text-[28px] mb-32px'
         }
     }
 });

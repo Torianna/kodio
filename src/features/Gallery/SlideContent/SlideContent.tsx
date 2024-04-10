@@ -1,8 +1,8 @@
 import React, {FunctionComponent} from "react";
-import {SlideType} from "../../types/slideType";
-import {Heading} from "../../components/Heading/Heading";
-import Text from "../../components/Text/Text";
-import Slide from "./Slide/Slide";
+import {SlideType} from "../../../types/SlideType";
+import {Heading} from "../../../components/Heading/Heading";
+import Text from "../../../components/Text/Text";
+import Slide from "../Slide/Slide";
 
 interface Props {
     slide: SlideType

@@ -1,8 +1,19 @@
 .embla-image {
     pointer-events: none;
-    --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 70%;
+}
+
+@media (max-width: 1024px){
+    .embla-image {
+        --slide-size: 80%;
+    }
+}
+
+@media (max-width: 768px){
+    .embla-image {
+        --slide-size: 90%;
+    }
 }
 
 .embla-image.right:not(.left) {
@@ -19,22 +30,6 @@
 
 .embla-text {
     pointer-events: none;
-    --slide-height: 19rem;
     --slide-spacing: 1rem;
     --slide-size: 100%;
-}
-
-.embla__viewport {
-    overflow: hidden;
-}
-.embla__container {
-    backface-visibility: hidden;
-    display: flex;
-    touch-action: pan-y;
-    margin-left: calc(var(--slide-spacing) * -1);
-}
-
-.embla__button__svg {
-    width: 35%;
-    height: 35%;
 }
