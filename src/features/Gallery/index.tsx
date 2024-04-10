@@ -28,36 +28,36 @@ const container = tv({
 
 const Gallery: FunctionComponent<PropType> = (props) => {
     const {slides, options} = props
-    const [emblaRef, emblaApi] = useEmblaCarousel(options)
-    const [emblaRef2, emblaApi2] = useEmblaCarousel(options)
+    const [emblaRefImage, emblaApiImage] = useEmblaCarousel(options)
+    const [emblaRefContent, emblaApiContent] = useEmblaCarousel(options)
 
     const {
         prevBtnDisabled,
         nextBtnDisabled,
         onPrevButtonClick,
         onNextButtonClick
-    } = usePrevNextButtons(emblaApi)
+    } = usePrevNextButtons(emblaApiImage)
 
     const {
-        onPrevButtonClick: onPrevButtonClick2,
-        onNextButtonClick: onNextButtonClick2,
-    } = usePrevNextButtons(emblaApi2)
+        onPrevButtonClick: onPrevContentButtonClick,
+        onNextButtonClick: onNextContentButtonClick,
+    } = usePrevNextButtons(emblaApiContent)
 
     const onNext = () => {
         onNextButtonClick()
-        onNextButtonClick2()
+        onNextContentButtonClick()
     }
 
     const onPrevious = () => {
         onPrevButtonClick()
-        onPrevButtonClick2()
+        onPrevContentButtonClick()
     }
 
     return (
         <div className="flex md:flex-row md:pl-[5%] flex-col">
             <div className={'flex-1'}>
                 <div className={'flex-col px-[10%]'}>
-                    <div className="overflow-hidden pointer-events-none embla-text w-auto" ref={emblaRef2}>
+                    <div className="overflow-hidden pointer-events-none embla-text w-auto" ref={emblaRefContent}>
                         <div className={container()}>
                             {slides.map((index) => (
                                 <SlideContent slide={data[index]}/>
@@ -75,11 +75,11 @@ const Gallery: FunctionComponent<PropType> = (props) => {
                 </div>
             </div>
             <div
-                className={`flex-1 overflow-hidden pointer-events-none embla-image w-auto pl-[10%] md:pl-0 ${emblaApi?.canScrollPrev() ? 'left' : ''} ${emblaApi?.canScrollNext() ? 'right' : ''}`}
-                ref={emblaRef}>
+                className={`flex-1 overflow-hidden pointer-events-none embla-image w-auto pl-[10%] md:pl-0 ${emblaApiImage?.canScrollPrev() ? 'left' : ''} ${emblaApiImage?.canScrollNext() ? 'right' : ''}`}
+                ref={emblaRefImage}>
                 <div className={container({variant: 'picture'})}>
                     {slides.map((index) => (
-                        <SlidePicture index={index} selected={index === emblaApi?.selectedScrollSnap()}/>
+                        <SlidePicture index={index} selected={index === emblaApiImage?.selectedScrollSnap()}/>
                     ))}
                 </div>
             </div>
