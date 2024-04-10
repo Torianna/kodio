@@ -6,7 +6,7 @@ import data from '../../data/slidesData.json'
 import {SlideContent} from "./SlideContent/SlideContent";
 import {SlidePicture} from "./SlidePicture/SlidePicture";
 import ActionContainer from "./ActionContainer/ActionContainer";
-import {usePrevNextButtons} from "../../hooks/usePreviousNextButtons";
+import {useEmblaActions} from "../../hooks/useEmblaActions";
 import {tv} from "tailwind-variants";
 import Button from "../../components/Button/Button";
 import LeftArrow from "../../assets/icons/LeftArrow";
@@ -36,12 +36,12 @@ const Gallery: FunctionComponent<PropType> = (props) => {
         nextBtnDisabled,
         onPrevButtonClick,
         onNextButtonClick
-    } = usePrevNextButtons(emblaApiImage)
+    } = useEmblaActions(emblaApiImage)
 
     const {
         onPrevButtonClick: onPrevContentButtonClick,
         onNextButtonClick: onNextContentButtonClick,
-    } = usePrevNextButtons(emblaApiContent)
+    } = useEmblaActions(emblaApiContent)
 
     const onNext = () => {
         onNextButtonClick()

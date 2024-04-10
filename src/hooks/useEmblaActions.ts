@@ -1,17 +1,17 @@
 import {EmblaCarouselType} from "embla-carousel";
 import {useCallback, useEffect, useState} from "react";
 
-type UsePrevNextButtonsType = {
+type UseEmblaActionsType = {
     prevBtnDisabled: boolean
     nextBtnDisabled: boolean
     onPrevButtonClick: () => void
     onNextButtonClick: () => void
 }
 
-export const usePrevNextButtons = (
+export const useEmblaActions = (
     emblaApi: EmblaCarouselType | undefined,
     onButtonClick?: (emblaApi: EmblaCarouselType) => void
-): UsePrevNextButtonsType => {
+): UseEmblaActionsType => {
     const [prevBtnDisabled, setPrevBtnDisabled] = useState<boolean>(true)
     const [nextBtnDisabled, setNextBtnDisabled] = useState<boolean>(true)
 
