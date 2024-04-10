@@ -1,5 +1,4 @@
 .embla-image {
-    pointer-events: none;
     --slide-spacing: 1rem;
     --slide-size: 70%;
 }
@@ -29,7 +28,6 @@
 }
 
 .embla-text {
-    pointer-events: none;
     --slide-spacing: 1rem;
     --slide-size: 100%;
 }

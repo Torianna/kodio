@@ -57,7 +57,7 @@ const Gallery: FunctionComponent<PropType> = (props) => {
         <div className="flex md:flex-row md:pl-[5%] flex-col">
             <div className={'flex-1'}>
                 <div className={'flex-col px-[10%]'}>
-                    <div className="overflow-hidden embla-text w-auto" ref={emblaRef2}>
+                    <div className="overflow-hidden pointer-events-none embla-text w-auto" ref={emblaRef2}>
                         <div className={container()}>
                             {slides.map((index) => (
                                 <SlideContent slide={data[index]}/>
@@ -75,7 +75,7 @@ const Gallery: FunctionComponent<PropType> = (props) => {
                 </div>
             </div>
             <div
-                className={`flex-1 overflow-hidden embla-image w-auto pl-[10%] md:pl-0 ${emblaApi?.canScrollPrev() ? 'left' : ''} ${emblaApi?.canScrollNext() ? 'right' : ''}`}
+                className={`flex-1 overflow-hidden pointer-events-none embla-image w-auto pl-[10%] md:pl-0 ${emblaApi?.canScrollPrev() ? 'left' : ''} ${emblaApi?.canScrollNext() ? 'right' : ''}`}
                 ref={emblaRef}>
                 <div className={container({variant: 'picture'})}>
                     {slides.map((index) => (
